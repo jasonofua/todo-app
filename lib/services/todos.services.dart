@@ -59,7 +59,6 @@ class TodosService with ReactiveServiceMixin {
     if (index != -1) {
       _todos.value[index].createdAt = DateTime.now().toString();
       _saveToHive();
-      notifyListeners();
       return true;
     } else {
       return false;
