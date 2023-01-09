@@ -10,6 +10,7 @@ class TodosScreenViewModel extends ReactiveViewModel {
   late final toggleStatus = _todosService.toggleStatus;
   late final removeTodo = _todosService.removeTodo;
   late final updateTodoContent = _todosService.updateTodoContent;
+  late final addDate = _todosService.addDate;
 
   List<Todo> get todos => _todosService.todos;
 

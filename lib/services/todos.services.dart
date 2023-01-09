@@ -54,6 +54,18 @@ class TodosService with ReactiveServiceMixin {
     }
   }
 
+  bool addDate(String id){
+    final index = _todos.value.indexWhere((todo) => todo.id == id);
+    if (index != -1) {
+      _todos.value[index].createdAt = DateTime.now().toString();
+      _saveToHive();
+      notifyListeners();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   bool updateTodoContent(String id, String text) {
     final index = _todos.value.indexWhere((todo) => todo.id == id);
     if (index != -1) {

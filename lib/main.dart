@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo/model/todo.adapter.dart';
 import 'package:todo/ui/screens/todos_ui_view.dart';
-
 import 'app/locator.dart';
 
 void main() async {
@@ -22,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const TodosScreenView(),
       theme: ThemeData.dark(),
       title: 'My Todos',
