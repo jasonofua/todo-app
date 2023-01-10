@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:stacked/stacked.dart';
 import 'package:sticky_grouped_list/sticky_grouped_list.dart';
 import 'package:todo/model/todo.dart';
@@ -84,7 +85,7 @@ class TodosScreenView extends StatelessWidget {
       child: Align(
         alignment: Alignment.center,
         child: Container(
-          width: 120,
+          width: 150,
           decoration: BoxDecoration(
             color: Colors.blue[300],
             border: Border.all(
@@ -95,7 +96,7 @@ class TodosScreenView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              '${DateTime.parse(element.createdAt).day}-${DateTime.parse(element.createdAt).month}-${DateTime.parse(element.createdAt).year}',
+                Jiffy(DateTime.parse(element.createdAt)).yMMMMd,
               textAlign: TextAlign.center,
             ),
           ),
