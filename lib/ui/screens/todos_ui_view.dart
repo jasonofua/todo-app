@@ -18,9 +18,9 @@ class TodosScreenView extends StatelessWidget {
           elements: model.todos,
           order: StickyGroupedListOrder.ASC,
           groupBy: (Todo element) => DateTime(
-              DateTime.parse(element.createdAt).year,
-            DateTime.parse(element.createdAt).month,
-              DateTime.parse(element.createdAt).day,
+              DateTime.parse(element.createdAt).year ?? DateTime.now().year,
+            DateTime.parse(element.createdAt).month ?? DateTime.now().month,
+              DateTime.parse(element.createdAt).day ?? DateTime.now().day,
           ),
           groupComparator: (DateTime value1, DateTime value2) =>
               value2.compareTo(value1),

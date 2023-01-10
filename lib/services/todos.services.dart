@@ -25,7 +25,7 @@ class TodosService with ReactiveServiceMixin {
   void _saveToHive() => Hive.box('todos').put('todos', _todos.value);
 
   void newTodo() {
-    _todos.value.insert(0, Todo(id: _randomId()));
+    _todos.value.insert(0, Todo(id: _randomId(),createdAt: DateTime.now().toString()));
     _saveToHive();
     notifyListeners();
   }
